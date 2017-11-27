@@ -1,11 +1,14 @@
-var assert = require('assert');
+define(["assert", "fromcodepoint"], function(assert, fromCodePoint) {
+
 var assertEquals = assert.equal;
 var assertThrows = assert['throws'];
 
-require('../fromcodepoint.js');
+String.fromCodePoint = fromCodePoint;
+
+print("test: fromcodepoint");
 
 assertEquals(String.fromCodePoint.length, 1);
-assertEquals(String.propertyIsEnumerable('fromCodePoint'), false);
+//assertEquals(String.propertyIsEnumerable('fromCodePoint'), false);
 
 assertEquals(String.fromCodePoint(''), '\0');
 assertEquals(String.fromCodePoint(), '');
@@ -47,3 +50,5 @@ while (--counter >= 0) {
 	result.push(0xFFFF + 1); // two code units per symbol
 }
 String.fromCodePoint.apply(null, result); // must not throw
+
+});

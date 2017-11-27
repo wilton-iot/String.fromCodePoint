@@ -38,5 +38,11 @@
 	"scripts": {
 		"test": "node tests/tests.js",
 		"cover": "istanbul cover --report html --verbose --dir coverage tests/tests.js"
-	}
+	},
+  "wilton": {
+    "excludes": [
+      "tests",
+      "LICENSE-MIT.txt"
+    ]
+  }
 }

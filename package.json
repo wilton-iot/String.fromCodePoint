@@ -42,7 +42,8 @@
   "wilton": {
     "excludes": [
       "tests",
-      "LICENSE-MIT.txt"
+      "LICENSE-MIT.txt",
+      "test.js"
     ]
   }
 }
